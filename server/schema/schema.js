@@ -63,7 +63,7 @@ const mutation = new GraphQLObjectType({
                 email: { type: GraphQLNonNull(GraphQLString) },
                 phone: { type: GraphQLNonNull(GraphQLString) }
             },
-            resolve(parent, args){
+            resolve: (parent, args) => {
                 const client = new Client({
                     name: args.name, email: args.email, phone: args.phone
                 })
@@ -73,9 +73,7 @@ const mutation = new GraphQLObjectType({
         deleteClient: {
             type: ClientType,
             args: { id: { type: GraphQLNonNull(GraphQLID) } },
-            resolve(parent, args){
-                return Client.findByIdAndRemove((args.id))
-            }
+            resolve: (parent, args) => Client.findByIdAndRemove((args.id))
         }
     }
 })

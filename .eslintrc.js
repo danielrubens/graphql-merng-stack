@@ -1,15 +1,27 @@
 module.exports = {
   env: {
     browser: true,
-    commonjs: true,
     es2021: true
   },
-  extends: 'standard',
+  extends: [
+    'plugin:react/recommended',
+    'standard'
+  ],
   overrides: [
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
+  plugins: [
+    'react'
+  ],
   rules: {
   }
 }
+
+module.exports = {
+  // ...
+  plugins: ["node", "eslint-plugin-react"],
+  // ...
+};

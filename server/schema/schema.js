@@ -127,8 +127,7 @@ const mutation = new GraphQLObjectType({
               completed: { value: 'Completed' }
             }
           })
-        },
-        clientId: { type: GraphQLNonNull(GraphQLID) }
+        }
       },
       resolve: (parent, args) => Project.findByIdAndUpdate(args.id, {
         $set: {

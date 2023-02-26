@@ -1,4 +1,5 @@
+import AddClientModal from "./AddClientModal";
 import Clients from "./Clients";
 import Header from "./Header";
 
-export { Clients, Header};
+export { AddClientModal, Clients, Header};

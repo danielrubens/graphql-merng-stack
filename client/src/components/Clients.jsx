@@ -6,10 +6,10 @@ import Spinner from './Spinner'
 
 const Clients = () => {
   const { loading, error, data } = useQuery(GET_CLIENTS)
-  if (loading) return <Spinner />
-  if (error) return <p>Something Went Wrong</p>
   return (
     <>
+        {loading && <Spinner />}
+        {error && <p>Something Went Wrong</p>}
         {!loading && !error && (
             <table className='table table-hover mt-3'>
                 <thead>

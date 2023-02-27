@@ -12,13 +12,13 @@ const Projects = () => {
     <>
         {loading && <Spinner />}
         {error && <p>Something Went Wrong</p>}
-        {data.projects.length > 0 ? (
+        {data?.projects && (
             <div className="row">
                 {data.projects?.map((project) => (
                     <ProjectCard key={project.id} project={project}/>
                 ))}
-            </div>
-        ): (<p>No projects</p>)}
+            </div>)
+        }
     </>
   )
 }

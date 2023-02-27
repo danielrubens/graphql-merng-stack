@@ -7,6 +7,11 @@ const AddClientModal = () => {
   const initialState = {name: "", email: "", phone: "" }
   const [state, setState] = useReducer((state, action) => ({...state, ...action }), initialState)
   const keys = Object.keys(state)
+  
+  const onSubmit = (e) => {
+    e.preventDefault()
+    console.log(state)
+  }
 
   return (
     <>
@@ -26,7 +31,7 @@ const AddClientModal = () => {
                             </button>
                     </div>
                     <div className="modal-body">
-                        <form>
+                        <form onSubmit={onSubmit}>
                             {keys.map((_, index) =>(
                                 <div className="mb-3">
                                     <label className="form-label">{keys[index]}</label>
@@ -34,6 +39,7 @@ const AddClientModal = () => {
                                            onChange={({target}) => setState({[keys[index]]: target.value})}/>
                                 </div>
                             ))}
+                            <button type="submit" data-bs-dismiss="modal" className="btn btn-secondary">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -51,7 +51,7 @@ const AddClientModal = () => {
                     <div className="modal-body">
                         <form onSubmit={onSubmit}>
                             {keys.map((_, index) =>(
-                                <div className="mb-3">
+                                <div className="mb-3" key={index}>
                                     <label className="form-label">{keys[index]}</label>
                                     <input type="text" className="form-control" id={keys[index]} 
                                            onChange={({target}) => setState({[keys[index]]: target.value})}/>

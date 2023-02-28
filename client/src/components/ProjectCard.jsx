@@ -7,6 +7,7 @@ const ProjectCard = ({project}) => {
                     <h5 className="card-title">{project.name}</h5>
                     <a className="btn btn-light" href={`/projects/${project.id}`}>View</a>
                 </div>
+                <p className="small">Status: <strong>{project.status}</strong></p>
             </div>
         </div>
     </div>
